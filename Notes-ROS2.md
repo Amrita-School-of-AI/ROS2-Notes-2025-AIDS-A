@@ -358,3 +358,55 @@ ros2 param load /<node_name> <file_name>.yaml
 # e.g.,
 ros2 param load /turtlesim turtlesim_params.yaml
 ```
+
+### Workspaces and Building Packages
+
+1. A Workspace folder structure
+
+```
+<workspace_name>/
+ ├── build/ (generated after build)
+ ├── install/ (generated after build)
+ ├── log/ (generated after build)
+ └── src/
+    ├── my_cpp_pkg/
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── include/
+    │   ├── src/
+    │   ├── launch/
+    │   └── config/
+    ├── my_py_pkg/
+    │   ├── package.xml
+    │   ├── setup.py
+    │   ├── resource/
+    │   ├── my_py_pkg/
+    │   ├── launch/
+    │   └── config/
+    ├── README.md
+    └── workspace.repos
+```
+
+2. Create a workspace
+
+```shell
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/
+```
+
+3. Install colcon build tool
+
+```shell
+sudo apt install python3-colcon-common-extensions
+```
+
+4. Add some source code to test build
+
+```shell
+mkdir -p src/examples
+git clone https://github.com/ros2/examples.git src/examples
+```
+
+
+
+
