@@ -390,8 +390,8 @@ ros2 param load /turtlesim turtlesim_params.yaml
 2. Create a workspace
 
 ```shell
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/
+mkdir -p ~/Example1/src
+cd ~/Example1/
 ```
 
 3. Install colcon build tool
@@ -400,13 +400,11 @@ cd ~/ros2_ws/
 sudo apt install python3-colcon-common-extensions
 ```
 
-4. Add some source code to test build
+4. Create a package with C 
 
 ```shell
-mkdir -p src/examples
-git clone https://github.com/ros2/examples.git src/examples
+ros2 package create --build-type ament_cmake --node-name my_node my_package
 ```
 
-
-
+5.  
 
